@@ -9,16 +9,21 @@ $dark: #023047;
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/base/_all.sass";
 @import "../node_modules/bulma/sass/grid/columns.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
 
 @import "../node_modules/bulma/sass/components/navbar.sass";
 @import "../node_modules/bulma/sass/elements/button.sass";
 @import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/icon.sass";
+@import "../node_modules/bulma/sass/elements/box.sass";
+@import "../node_modules/bulma/sass/elements/other.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
 @import "../node_modules/bulma/sass/helpers/typography.sass";
 @import "../node_modules/bulma/sass/helpers/color.sass";
 @import "../node_modules/bulma/sass/helpers/spacing.sass";
 @import "../node_modules/bulma/sass/helpers/other.sass";
 @import "../node_modules/bulma/sass/layout/hero.sass";
-@import "../node_modules/bulma/sass/elements/title.sass";
+
 
 /* Font Awesome import ----------- */
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
