@@ -1,0 +1,40 @@
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="container">
+
+    <!-- Brand and Burger menu icon -->
+    <div class="navbar-brand">
+      <a class="navbar-item is-size-4 has-text-weight-bold has-text-light">
+        CLIENT<i class="fas fa-fire px-1 has-text-primary"></i>SCOUT
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" 
+        aria-expanded="false" data-target="navbarMenu"
+        (click)="isMenuHidden = !isMenuHidden"
+        [class.is-active]="!isMenuHidden">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    
+    <!-- Menu -->
+    <div id="navbarMenu" class="navbar-menu" [class.is-active]="!isMenuHidden">
+      <div class="navbar-start">
+        <a class="navbar-item">Dashboard</a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary is-small">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light is-small">
+              <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
+              <span><strong>Log in</strong></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
