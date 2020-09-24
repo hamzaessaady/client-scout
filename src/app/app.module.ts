@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { ClientsComponent } from './components/clients/clients.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BannerComponent } from './components/banner/banner.component';
     NavbarComponent,
     LoginComponent,
     DashboardComponent,
-    BannerComponent
+    BannerComponent,
+    ClientsComponent
   ],
   imports: [
     BrowserModule,
