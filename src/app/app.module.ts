@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { ClientsComponent } from './components/clients/clients.component';
+import { AddClientComponent } from './components/add-client/add-client.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ClientsComponent } from './components/clients/clients.component';
     LoginComponent,
     DashboardComponent,
     BannerComponent,
-    ClientsComponent
+    ClientsComponent,
+    AddClientComponent
   ],
   imports: [
     BrowserModule,

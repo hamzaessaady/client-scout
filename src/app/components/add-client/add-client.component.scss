@@ -1,0 +1,14 @@
+.hero-blob {
+  height: 90vh;
+  background-image: url('../../../assets/images/blob.svg'), url('../../../assets/images/add_client_illust.png');
+  background-repeat: no-repeat, no-repeat;
+  background-size: 400px 400px, 80%;
+  background-position: -85px -100px, bottom left;
+}
+
+@media (max-width: 769px) {
+  .hero-blob {
+    height: 30vh;
+    background: #fb8500;
+  }
+}
