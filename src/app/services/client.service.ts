@@ -12,14 +12,17 @@ import { Client } from '../models/client';
 })
 export class ClientService {
 
+  // ATTRIBUTES
   clientsCollection: AngularFirestoreCollection<Client>;
   clientDoc: AngularFirestoreDocument<Client>;
   clients: Observable<Client[]>;
 
+  // CONSTRUCTOR
   constructor(private afs: AngularFirestore) { 
     this.clientsCollection = afs.collection('client', ref => ref.orderBy('lName', "asc"));
   }
 
+  // GET all clients
   getClients(): Observable<Client[]> {
     this.clients = this.clientsCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
@@ -28,7 +31,12 @@ export class ClientService {
         return data;
       }))
     );
-
+  
     return this.clients;
+  }
+
+  // ADD client
+  addClient(client: Client): void {
+    this.clientsCollection.add(client);
   }
 }

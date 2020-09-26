@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -27,7 +29,9 @@ import { AddClientComponent } from './components/add-client/add-client.component
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
+    FlashMessagesModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase, 'clientscout'),
     AngularFirestoreModule,
     AngularFireAuthModule
