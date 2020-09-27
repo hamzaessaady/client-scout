@@ -81,3 +81,42 @@ $dark: #023047;
   visibility: visible;
   opacity: 1;
 }
+
+/* ------ PlaceHolders ------*/
+.ph-content {
+  overflow: hidden;
+  background: #000;
+  
+  animation-duration: 1.7s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: placeholderAnimate;
+  background: hsl(0, 0%, 86%);
+  background: linear-gradient(to right, #eee 2%, #ddd 18%, #eee 33%);
+  background-size: 1300px; 
+}
+
+@keyframes placeholderAnimate {
+  0%{ background-position: -650px 0; }
+  100%{ background-position: 650px 0; }
+}
+
+.ph-title {
+  height: 40px;
+  width: 70%;
+}
+.ph-subtitle {
+  height: 30px;
+  width: 50%;
+}
+.ph-subtitle-2 {
+  height: 35px;
+  width: 50%;
+  margin-left: 50%;
+}
+.ph-subtitle-s {
+  display: inline-block;
+  height: 20px;
+  width: 50%;
+}

@@ -14,12 +14,15 @@
       <!-- Client Card -->
       <div class="columns container is-centered">
         <div class="card column is-8-desktop is-10-tablet">
-          <div class="card-content pt-0">
+
+          <div class="card-content pt-0"
+            *ngIf="client !== null ;else noClient">
 
             <!-- Control panel -->
             <div class="columns is-mobile">
               <span class="column">
-                <a href="#" class="has-text-info tooltip">
+                <a class="has-text-info tooltip"
+                  [routerLink]="['client/edit', client?.id]" >
                   <i class="fas fa-user-edit is-size-5"></i>
                   <span class="tooltiptext">Edit</span>
                 </a>
@@ -35,21 +38,29 @@
             <!-- Client Basic Info -->
             <div class="columns is-vcentered is-mobile on-x-mobile">
               <div class="column is-6">
-                <h1 class="title">
-                  Johne Doe
+                <h1 class="title"
+                  [ngClass]="(client===undefined)?'ph-content ph-title':''">
+                  {{client?.lName}} {{client?.fName}}
                 </h1>
-                <h2 class="subtitle">
-                  <span class="tag is-link is-light is-medium is-rounded">324353623</span>
+                <h2 class="subtitle"
+                  [ngClass]="(client===undefined)?'ph-content ph-subtitle':''">
+                  <span class="tag is-link is-light is-medium is-rounded"
+                    *ngIf="client!==undefined">
+                    {{client?.id}}
+                  </span>
                 </h2>
               </div>
               <div class="column is-6">
-                <div class="control">
-                  <div class="tags has-addons">
+                <div class="control"
+                [ngClass]="(client===undefined)?'ph-content ph-subtitle-2':''">
+                  <div class="tags has-addons" *ngIf="client!==undefined">
                       <div class="container has-text-right">
-                        <span class="tag is-primary is-light is-large has-text-weight-semibold">
-                          4353425
+                        <span class="tag is-primary is-light is-large has-text-weight-semibold"
+                          [class.is-success]="client?.balance === 0">
+                          {{client?.balance}}
                         </span>
-                        <span class="tag is-primary is-large">
+                        <span class="tag is-primary is-large"
+                          [class.is-success]="client?.balance === 0">
                           <i class="fas fa-dollar-sign"></i>
                         </span>
                       </div>
@@ -66,8 +77,9 @@
                   <span class="">Email</span>
                 </div>
                 <div class="column has-text-right">
-                  <span class="has-text-grey-light">
-                    gsfgdhs@gmail.com
+                  <span class="has-text-grey-light"
+                    [ngClass]="(client===undefined)?'ph-content ph-subtitle-s':''">
+                    {{client?.email}}
                   </span>
                 </div>
               </div>
@@ -77,18 +89,27 @@
                   <span class="">Phone</span>
                 </div>
                 <div class="column has-text-right">
-                  <span class="has-text-grey-light">
-                    0345234765
+                  <span class="has-text-grey-light"
+                    [ngClass]="(client===undefined)?'ph-content ph-subtitle-s':''">
+                    {{client?.phone}}
                   </span>
                 </div>
               </div>
             </div>
             
           </div>
+
+          <ng-template #noClient class="columns card-content pt-0 container">
+            <div class="column has-text-centered">
+              <img src="assets/images/no_client_illust.png" class="is-pulled-right" alt="no client" width="70%">
+              <p class="is-size-4 has-text-weight-semibold has-text-danger">No client found!</p>
+            </div>
+          </ng-template>
+          
         </div>
 
       </div>
-      
+
     </div>
   </section>
 </article>

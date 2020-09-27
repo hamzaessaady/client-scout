@@ -14,7 +14,7 @@
           <td>{{ client.lName }} {{ client.fName }}</td>
           <td>{{ client.email}}</td>
           <td>{{ client.balance | currency:"USD"}}</td>
-          <td><a href=""><span class="tag is-link">Details</span></a></td>
+          <td><a [routerLink]="['client', client.id]" ><span class="tag is-link">Details</span></a></td>
         </tr>
     </table>
     <div *ngIf="!isLoaded" class="has-text-centered">
