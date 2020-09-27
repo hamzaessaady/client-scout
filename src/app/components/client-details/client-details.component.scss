@@ -1,0 +1,17 @@
+.panel-block {
+  i { width: 20px;}
+}
+
+@media (max-width: 450px) {
+  .on-x-mobile {
+    flex-direction: column;
+
+    .has-text-right {text-align: center !important; padding-top: 0;}
+
+    .column { 
+      width: 100%;
+      text-align: center; 
+    };
+    
+  }
+}

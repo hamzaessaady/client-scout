@@ -16,6 +16,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { AddClientComponent } from './components/add-client/add-client.component';
+import { ClientDetailsComponent } from './components/client-details/client-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AddClientComponent } from './components/add-client/add-client.component
     DashboardComponent,
     BannerComponent,
     ClientsComponent,
-    AddClientComponent
+    AddClientComponent,
+    ClientDetailsComponent
   ],
   imports: [
     BrowserModule,
