@@ -1,0 +1,24 @@
+.hero-blob {
+  height: 90vh;
+  background-image: url('../../../assets/images/Vector.svg'),
+                    url('../../../assets/images/edit_illust.png');
+  background-repeat: no-repeat, no-repeat;
+  background-size: 250px 250px, 65%;
+  background-position: top right, bottom right;
+  
+}
+
+.no-client-title {
+  border-bottom: 9px dotted #dc5b4e;
+}
+
+@media (max-width: 769px) {
+  .columns {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .hero-blob {
+    padding-bottom: 50px;
+    background: #219ebc;
+  }
+}

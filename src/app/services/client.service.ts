@@ -57,4 +57,10 @@ export class ClientService {
   addClient(client: Client): void {
     this.clientsCollection.add(client);
   }
+
+  // UPDATE client
+  updateClient(client: Client): void {
+    this.clientDoc = this.afs.doc<Client>(`client/${client.id}`);
+    this.clientDoc.update(client);
+  }
 }

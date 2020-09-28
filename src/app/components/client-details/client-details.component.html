@@ -12,7 +12,7 @@
       </div>
       
       <!-- Client Card -->
-      <div class="columns container is-centered">
+      <div class="columns container is-centered mb-6">
         <div class="card column is-8-desktop is-10-tablet">
 
           <div class="card-content pt-0"
@@ -22,7 +22,7 @@
             <div class="columns is-mobile">
               <span class="column">
                 <a class="has-text-info tooltip"
-                  [routerLink]="['client/edit', client?.id]" >
+                  [routerLink]="['/client/edit', client?.id]" >
                   <i class="fas fa-user-edit is-size-5"></i>
                   <span class="tooltiptext">Edit</span>
                 </a>
@@ -57,7 +57,7 @@
                       <div class="container has-text-right">
                         <span class="tag is-primary is-light is-large has-text-weight-semibold"
                           [class.is-success]="client?.balance === 0">
-                          {{client?.balance}}
+                          {{client?.balance | currency:' '}}
                         </span>
                         <span class="tag is-primary is-large"
                           [class.is-success]="client?.balance === 0">
@@ -99,12 +99,17 @@
             
           </div>
 
-          <ng-template #noClient class="columns card-content pt-0 container">
-            <div class="column has-text-centered">
-              <img src="assets/images/no_client_illust.png" class="is-pulled-right" alt="no client" width="70%">
-              <p class="is-size-4 has-text-weight-semibold has-text-danger">No client found!</p>
+          <ng-template #noClient>
+            <div class="columns card-content pt-0 container">
+              <div class="column has-text-centered">
+                <h1 class="is-size-3 has-text-weight-semibold">
+                  <span class="no-client-title">No client found!</span>
+                </h1>
+                <img src="assets/images/no_client_illust.png" class="is-pulled-right" alt="no client" width="70%">
+              </div>
             </div>
           </ng-template>
+          
           
         </div>
 

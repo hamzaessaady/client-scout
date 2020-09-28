@@ -2,6 +2,10 @@
   i { width: 20px;}
 }
 
+.no-client-title {
+  border-bottom: 9px dotted #dc5b4e;
+}
+
 @media (max-width: 450px) {
   .on-x-mobile {
     flex-direction: column;

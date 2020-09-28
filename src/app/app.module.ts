@@ -17,6 +17,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { AddClientComponent } from './components/add-client/add-client.component';
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
+import { ClientEditComponent } from './components/client-edit/client-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ClientDetailsComponent } from './components/client-details/client-detai
     BannerComponent,
     ClientsComponent,
     AddClientComponent,
-    ClientDetailsComponent
+    ClientDetailsComponent,
+    ClientEditComponent
   ],
   imports: [
     BrowserModule,
