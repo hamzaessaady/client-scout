@@ -15,9 +15,9 @@
       <div class="columns container is-centered mb-6">
         <div class="card column is-8-desktop is-10-tablet">
 
+          <!-- If client exists -->
           <div class="card-content pt-0"
             *ngIf="client !== null ;else noClient">
-
             <!-- Control panel -->
             <div class="columns is-mobile">
               <span class="column">
@@ -28,13 +28,12 @@
                 </a>
               </span>
               <span class="column has-text-right ">
-                <a href="#" class="has-text-danger tooltip">
+                <a (click)="isShowModal=true" class="has-text-danger tooltip">
                   <i class="fas fa-user-minus  is-size-5"></i>
                   <span class="tooltiptext">Delete</span>
                 </a>
               </span>           
             </div>
-
             <!-- Client Basic Info -->
             <div class="columns is-vcentered is-mobile on-x-mobile">
               <div class="column is-6">
@@ -68,7 +67,6 @@
                 </div>
               </div>
             </div>
-
             <!-- Client Email and Phone -->
             <div class="panel has-text-weight-semibold mt-5">
               <div class="columns is-vcentered is-mobile panel-block mx-0 py-1 on-x-mobile">
@@ -96,9 +94,9 @@
                 </div>
               </div>
             </div>
-            
           </div>
 
+          <!-- If client does not exist -->
           <ng-template #noClient>
             <div class="columns card-content pt-0 container">
               <div class="column has-text-centered">
@@ -118,3 +116,21 @@
     </div>
   </section>
 </article>
+
+<!-- Modal : Confirm Delete operation -->
+<div class="modal" [class.is-active]="isShowModal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Confirmation</p>
+      <button class="delete" (click)="isShowModal=false" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <p>Are you sure you want to delete this client ?</p>
+    </section>
+    <footer class="modal-card-foot py-2">
+      <button class="button is-danger" (click)="onDeleteClient()">Delete log</button>
+      <button class="button" (click)="isShowModal=false">Cancel</button>
+    </footer>
+  </div>
+</div>
