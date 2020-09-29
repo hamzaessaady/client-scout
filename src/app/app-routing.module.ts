@@ -27,7 +27,8 @@ const routes: Routes = [
   },
   { 
     path: 'settings',
-    component: SettingsComponent
+    component: SettingsComponent,
+    canActivate: [AuthGuard]
   },
   { 
     path: 'client/add',
