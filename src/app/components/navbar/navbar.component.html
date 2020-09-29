@@ -3,7 +3,8 @@
 
     <!-- Brand and Burger menu icon -->
     <div class="navbar-brand">
-      <a class="navbar-item is-size-4 has-text-weight-bold has-text-light">
+      <a class="navbar-item is-size-4 has-text-weight-bold has-text-light"
+        routerLink="/">
         CLIENT<i class="fas fa-fire px-1 has-text-primary"></i>SCOUT
       </a>
       <a role="button" class="navbar-burger burger" aria-label="menu" 
@@ -19,18 +20,36 @@
     <!-- Menu -->
     <div id="navbarMenu" class="navbar-menu" [class.is-active]="!isMenuHidden">
       <div class="navbar-start">
-        <a class="navbar-item">Dashboard</a>
+        <a class="navbar-item" routerLink="/">Dashboard</a>
       </div>
       <div class="navbar-end">
-        <div class="navbar-item">
+        <!-- logged in -->
+        <div class="navbar-item" *ngIf="!isLoggedIn">
           <div class="buttons">
-            <a class="button is-primary is-small">
+            <a class="button is-primary is-small" routerLink="/register">
               <strong>Sign up</strong>
             </a>
-            <a class="button is-light is-small">
+            <a class="button is-light is-small" routerLink="/login">
               <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
               <span><strong>Log in</strong></span>
             </a>
+          </div>
+        </div>
+        <!-- not logged in -->
+        <div class="navbar-item has-dropdown is-hoverable" *ngIf="isLoggedIn">
+          <a class="navbar-link">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="navbar-dropdown is-right">
+            <span class="navbar-item">
+              <strong>{{ loggedUser }}</strong>
+            </span>
+            <div class="navbar-item has-text-right">
+              <a class="button is-warning is-small" (click)="onLogOut()">
+                <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                <span><strong>Log out</strong></span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
