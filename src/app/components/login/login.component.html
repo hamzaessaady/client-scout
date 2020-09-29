@@ -8,10 +8,12 @@
           <div class="column">
             <div class="box">
               <div class="title">Log In</div>
-              <form>
+              <form (submit)="onSubmit()">
                 <div class="field">
                   <p class="control has-icons-left">
-                    <input class="input" type="email" placeholder="Email">
+                    <input class="input" type="email" name="email"
+                      placeholder="Email"
+                      [(ngModel)]="email">
                     <span class="icon is-small is-left">
                       <i class="fas fa-paper-plane"></i>
                     </span>
@@ -20,7 +22,9 @@
                 </div>
                 <div class="field">
                   <p class="control has-icons-left">
-                    <input class="input" type="password" placeholder="Password">
+                    <input class="input" type="password" name="password"
+                      placeholder="Password"
+                      [(ngModel)]="password">
                     <span class="icon is-small is-left">
                       <i class="fas fa-key"></i>
                     </span>
@@ -32,7 +36,8 @@
                 </div>
                 <div class="field">
                   <p class="control">
-                    <button class="button is-dark">
+                    <button class="button is-dark" type="submit"
+                      [class.is-loading]="isLoginProcess">
                       <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
                       <strong>Login</strong>
                     </button>

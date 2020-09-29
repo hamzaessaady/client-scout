@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FlashMessagesService } from "angular2-flash-messages";
+import { Router } from "@angular/router";
+
+import { AuthService } from "src/app/services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -7,9 +11,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  email: string;
+  password: string;
+  isLoginProcess: boolean;
+
+  constructor(
+    private authService: AuthService,
+    private flashMessage: FlashMessagesService,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
+    this.isLoginProcess = false;
+    this.authService.getAuth().subscribe(auth => {
+      if (auth) {
+        this.router.navigate(['/']);
+      }
+    })
+  }
+
+  onSubmit(){
+    this.isLoginProcess = true;
+    this.authService.login(this.email, this.password)
+      .then(userData => {
+        this.flashMessage.show('You are logged in successfully!', {
+          cssClass: 'notification is-success py-3 is-radiusless',
+          timeout: 4000
+        });
+        this.isLoginProcess = false;
+        this.router.navigate(['/']);
+      })
+      .catch(err => {
+        this.flashMessage.show(err.message, {
+          cssClass: 'notification is-danger py-3 is-radiusless',
+          timeout: 4000
+        });
+        this.isLoginProcess = false;
+      })
   }
 
 }
