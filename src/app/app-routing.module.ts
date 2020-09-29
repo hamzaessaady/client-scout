@@ -7,6 +7,7 @@ import { AddClientComponent }     from './components/add-client/add-client.compo
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 import { ClientEditComponent }    from './components/client-edit/client-edit.component';
 import { SignupComponent }        from "./components/signup/signup.component";
+import { SettingsComponent }        from "./components/settings/settings.component";
 
 import { AuthGuard } from "./guards/auth.guard";
 
@@ -23,6 +24,10 @@ const routes: Routes = [
   { 
     path: 'register',
     component: SignupComponent
+  },
+  { 
+    path: 'settings',
+    component: SettingsComponent
   },
   { 
     path: 'client/add',

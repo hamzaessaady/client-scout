@@ -1,0 +1,70 @@
+<article>
+  <section class="hero is-light is-medium is-fullheight-with-navbar">
+    <div class="hero-content">
+
+      <!-- Back link -->
+      <div class="columns container is-centered mt-4">
+        <div class="column is-8-desktop is-10-tablet">
+          <a routerLink="/">
+            <i class="fas fa-chevron-circle-left"></i> Back to dashboard
+          </a>
+        </div>
+      </div>
+      
+      <!-- Settings Card -->
+      <div class="columns is-centered mb-6">
+        <div class="column card px-0 py-0 is-7-desktop is-10-tablet">
+          <!-- Card Header -->
+          <div class="card-header py-3 px-5 has-background-dark ">
+            <h1 class="title has-text-white">Settings</h1>
+          </div>
+          <!-- Card Content - Settings Form -->
+          <div class="card-content py-3">
+            <form (submit)="onSave()">
+              <div class="panel has-text-weight-semibold mt-5">
+                <!-- Allow registration -->
+                <div class="columns is-vcentered is-mobile panel-block mx-0 py-1">
+                  <div class="column is-10">
+                    <label for="allowRegistration">Allow registration</label>
+                  </div>
+                  <div class="column is-2 has-text-right">
+                    <input type="checkbox"
+                      id="allowRegistration" name="allowRegistration"
+                      [(ngModel)]="setting.isRegistrationAllowed">
+                  </div>
+                </div>
+                <!-- Disable balance on add -->
+                <div class="columns is-vcentered is-mobile panel-block mx-0 py-1">
+                  <div class="column is-10">
+                    <label for="balanceOnAdd">Disable balance on add</label>
+                  </div>
+                  <div class="column has-text-right">
+                    <input type="checkbox"
+                      id="balanceOnAdd" name="balanceOnAdd"
+                      [(ngModel)]="setting.isDisableBalanceOnAdd">
+                  </div>
+                </div>
+                <!-- Disable balance on edit  -->
+                <div class="columns is-vcentered is-mobile panel-block mx-0 py-1">
+                  <div class="column is-10">
+                    <label for="balanceOnEdit">Disable balance on edit</label>
+                  </div>
+                  <div class="column has-text-right">
+                    <input type="checkbox"
+                      id="balanceOnEdit" name="balanceOnEdit"
+                      [(ngModel)]="setting.isDisableBalanceOnEdit">
+                  </div>
+                </div>
+              </div>
+              <!-- Submit  -->
+              <div class="has-text-right">
+                <button class="button is-primary is-medium" type="submit">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</article>
