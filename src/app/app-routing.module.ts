@@ -6,6 +6,7 @@ import { LoginComponent }         from './components/login/login.component';
 import { AddClientComponent }     from './components/add-client/add-client.component';
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 import { ClientEditComponent }    from './components/client-edit/client-edit.component';
+import { SignupComponent }        from "./components/signup/signup.component";
 
 import { AuthGuard } from "./guards/auth.guard";
 
@@ -18,6 +19,10 @@ const routes: Routes = [
   { 
     path: 'login',
     component: LoginComponent
+  },
+  { 
+    path: 'register',
+    component: SignupComponent
   },
   { 
     path: 'client/add',

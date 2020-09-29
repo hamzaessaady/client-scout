@@ -1,0 +1,21 @@
+article {
+  section {
+    background-image: url('../../../assets/images/bg_signup.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+  }
+}
+
+@media (max-width: 769px) {
+  .columns {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .column {
+    width: 100%;
+  }
+  article section {
+    background-size: cover;
+  }
+}

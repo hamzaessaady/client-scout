@@ -18,6 +18,7 @@ import { ClientsComponent } from './components/clients/clients.component';
 import { AddClientComponent } from './components/add-client/add-client.component';
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 import { ClientEditComponent } from './components/client-edit/client-edit.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ClientEditComponent } from './components/client-edit/client-edit.compon
     ClientsComponent,
     AddClientComponent,
     ClientDetailsComponent,
-    ClientEditComponent
+    ClientEditComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

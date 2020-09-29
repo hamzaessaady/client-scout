@@ -1,0 +1,60 @@
+<article>
+  <section class="hero is-fullheight-with-navbar">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+
+          <!-- Illustration -->
+          <div class="column is-hidden-mobile">
+            <img src="assets/images/signup_illust.png" alt="Signup Illustration" width="90%">
+          </div>
+          
+          <!-- LOG IN  -->
+          <div class="column">
+            <div class="box">
+              <div class="title">Sign up</div>
+              <form (submit)="onSubmit()">
+                <div class="field">
+                  <p class="control has-icons-left">
+                    <input class="input" type="email" name="email"
+                      placeholder="Email"
+                      [(ngModel)]="email">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-paper-plane"></i>
+                    </span>
+                    <!-- <span class="help is-danger">This email is invalid</span> -->
+                  </p>
+                </div>
+                <div class="field">
+                  <p class="control has-icons-left">
+                    <input class="input" type="password" name="password"
+                      placeholder="Password"
+                      [(ngModel)]="password">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-key"></i>
+                    </span>
+                    <!-- <span class="help is-danger">Password required</span> -->
+                  </p>
+                </div>
+                <div class="block">
+                  Already have an account? <a href="#"><strong>Log in here</strong></a>.
+                </div>
+                <div class="field">
+                  <p class="control">
+                    <button class="button is-dark" type="submit"
+                      [class.is-loading]="isSignupProcess">
+                      <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
+                      <strong>Register</strong>
+                    </button>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
