@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 
 import { Setting } from "../models/setting";
 
@@ -15,23 +15,25 @@ const DEFAULT_SETTINGS: Setting = {
 
 export class SettingService {
 
-  settings: Setting;
+  settings: ReplaySubject<Setting> = new ReplaySubject<Setting>();
 
   constructor() { 
     if(localStorage.getItem('clientscout') == null){
-      this.settings = DEFAULT_SETTINGS;
+      this.settings.next(DEFAULT_SETTINGS);
       localStorage.setItem('clientscout', JSON.stringify({settings: this.settings}));
     } else {
-      this.settings = JSON.parse(localStorage.getItem('clientscout')).settings;
+      this.settings.next(JSON.parse(localStorage.getItem('clientscout')).settings);
     }
   }
 
   getSettings(): Observable<Setting> {
-    return of(this.settings);
+    return this.settings;
   }
 
   saveSettings(setting: Setting){
-    this.settings = setting;
-    localStorage.setItem('clientscout', JSON.stringify({settings: this.settings}));
+    this.settings.next(setting);
+    this.settings.subscribe(settings => {
+      localStorage.setItem('clientscout', JSON.stringify({settings: settings}));
+    })
   }
 }

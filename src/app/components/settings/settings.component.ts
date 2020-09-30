@@ -21,6 +21,11 @@ export class SettingsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.setting = {
+      isDisableBalanceOnAdd: null,
+      isDisableBalanceOnEdit: null,
+      isRegistrationAllowed: null
+    }
     this.settingService.getSettings().subscribe(data => this.setting = data);
   }
 
