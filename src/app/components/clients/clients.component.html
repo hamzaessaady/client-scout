@@ -1,22 +1,28 @@
-<div class="container mb-6">
-  <div class="table-container box mt-3" *ngIf="isLoaded">
-    <table  class="table table is-striped is-hoverable is-fullwidth">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Balance</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let client of clients">
-          <td>{{ client.lName }} {{ client.fName }}</td>
-          <td>{{ client.email}}</td>
-          <td>{{ client.balance | currency:"USD"}}</td>
-          <td style="width: 50px;"><a [routerLink]="['client', client.id]" ><span class="tag is-link">Details</span></a></td>
-        </tr>
-    </table>
+<div class="container mb-6 mt-6">
+  <div class="box mt-3" *ngIf="isLoaded">
+    <div class="table-container" *ngIf="clients.length>0">
+      <table  class="table table is-striped is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Balance</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let client of clients">
+            <td>{{ client.lName }} {{ client.fName }}</td>
+            <td>{{ client.email}}</td>
+            <td>{{ client.balance | currency:"USD"}}</td>
+            <td style="width: 50px;"><a [routerLink]="['client', client.id]" ><span class="tag is-link">Details</span></a></td>
+          </tr>
+      </table>
+    </div>
+    <div class="container has-text-centered is-italic has-text-grey"
+      *ngIf="clients.length==0">
+      No client
+    </div>
   </div>
   <div *ngIf="!isLoaded" class="has-text-centered mt-6">
     <img src="assets/images/spinner.gif" alt="spinner">
