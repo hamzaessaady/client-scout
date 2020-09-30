@@ -21,6 +21,7 @@ import { ClientEditComponent } from './components/client-edit/client-edit.compon
 import { SignupComponent } from './components/signup/signup.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ClientEditComponent,
     SignupComponent,
     SettingsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
