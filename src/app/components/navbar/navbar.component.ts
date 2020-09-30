@@ -47,6 +47,7 @@ export class NavbarComponent implements OnInit {
       timeout: 4000
     });
     this.isLoggedIn = false;
+    this.isMenuHidden = true;
     this.router.navigate(['/login']);
   }
 

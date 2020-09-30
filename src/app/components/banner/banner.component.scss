@@ -1,6 +1,25 @@
-section {
-  // .hero-body {
+@media (max-width: 500px) {
+  .on-x-mobile {
+    flex-direction: column;
 
-  //   background: url("../../../assets/images/banner-illust.png") 100% 10%/20% no-repeat,
-  // }
+    .has-text-right {text-align: center !important; padding-top: 0;}
+
+    .column { 
+      width: 100%;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+    };
+    
+    .button {
+      width: 100%;
+      &.is-normal {
+        font-size: 0.75rem;
+      }
+    }
+
+    .tag {font-size: 0.75rem;}
+    
+  }
+  
 }
