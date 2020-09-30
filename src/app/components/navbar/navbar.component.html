@@ -20,8 +20,10 @@
     <!-- Menu -->
     <div id="navbarMenu" class="navbar-menu" [class.is-active]="!isMenuHidden">
       <div class="navbar-start">
-        <a class="navbar-item" routerLink="/">Dashboard</a>
-        <a class="navbar-item" routerLink="/settings" *ngIf="isLoggedIn">
+        <a class="navbar-item" routerLink="/"
+          (click)="isMenuHidden = true">Dashboard</a>
+        <a class="navbar-item" routerLink="/settings" *ngIf="isLoggedIn"
+          (click)="isMenuHidden = true">
           Settings
         </a>
       </div>
@@ -29,10 +31,12 @@
         <!-- logged in -->
         <div class="navbar-item" *ngIf="!isLoggedIn && isRegAllowed">
           <div class="buttons">
-            <a class="button is-primary is-small" routerLink="/register">
+            <a class="button is-primary is-small" routerLink="/register"
+              (click)="isMenuHidden = true">
               <strong>Sign up</strong>
             </a>
-            <a class="button is-light is-small" routerLink="/login">
+            <a class="button is-light is-small" routerLink="/login"
+              (click)="isMenuHidden = true">
               <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
               <span><strong>Log in</strong></span>
             </a>
