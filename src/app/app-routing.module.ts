@@ -7,7 +7,8 @@ import { AddClientComponent }     from './components/add-client/add-client.compo
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 import { ClientEditComponent }    from './components/client-edit/client-edit.component';
 import { SignupComponent }        from "./components/signup/signup.component";
-import { SettingsComponent }        from "./components/settings/settings.component";
+import { SettingsComponent }      from "./components/settings/settings.component";
+import { NotFoundComponent }      from "./components/not-found/not-found.component";
 
 import { AuthGuard } from "./guards/auth.guard";
 import { RegistrationGuard } from "./guards/registration.guard";
@@ -46,6 +47,10 @@ const routes: Routes = [
     path: 'client/edit/:id',
     component: ClientEditComponent,
     canActivate: [AuthGuard]
+  },
+  { 
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 
