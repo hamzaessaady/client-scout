@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="table-container box mt-3">
-    <table *ngIf="isLoaded" class="table table is-striped is-hoverable is-fullwidth">
+  <div class="table-container box mt-3" *ngIf="isLoaded">
+    <table  class="table table is-striped is-hoverable is-fullwidth">
       <thead>
         <tr>
           <th>Name</th>
@@ -17,8 +17,8 @@
           <td style="width: 50px;"><a [routerLink]="['client', client.id]" ><span class="tag is-link">Details</span></a></td>
         </tr>
     </table>
-    <div *ngIf="!isLoaded" class="has-text-centered">
-      <img src="assets/images/spinner.gif" alt="spinner">
-    </div>
+  </div>
+  <div *ngIf="!isLoaded" class="has-text-centered mt-6">
+    <img src="assets/images/spinner.gif" alt="spinner">
   </div>
 </div>
