@@ -3,6 +3,7 @@ import { FlashMessagesService } from "angular2-flash-messages";
 import { Router } from "@angular/router";
 
 import { AuthService } from "src/app/services/auth.service";
+import { SettingService } from "src/app/services/setting.service";
 
 @Component({
   selector: 'app-login',
@@ -14,9 +15,11 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   isLoginProcess: boolean;
+  isRegAllowed: boolean;
 
   constructor(
     private authService: AuthService,
+    private settingService: SettingService,
     private flashMessage: FlashMessagesService,
     private router: Router,
   ) { }
@@ -27,7 +30,10 @@ export class LoginComponent implements OnInit {
       if (auth) {
         this.router.navigate(['/']);
       }
-    })
+    });
+    this.settingService.getSettings().subscribe(settings => {
+      this.isRegAllowed = settings.isRegistrationAllowed;
+    });
   }
 
   onSubmit(){

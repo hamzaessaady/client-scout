@@ -6,3 +6,9 @@ article {
     background-position: right;
   }
 }
+
+@media (max-width: 769px) {
+  article section {
+    background-size: cover;
+  }
+}

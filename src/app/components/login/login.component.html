@@ -31,8 +31,9 @@
                     <!-- <span class="help is-danger">Password required</span> -->
                   </p>
                 </div>
-                <div class="block">
-                  Don't have an account? <a href="#"><strong>Register here</strong></a>.
+                <div class="block" *ngIf="isRegAllowed">
+                  Don't have an account? 
+                  <a routerLink="/register"><strong>Register here</strong></a>.
                 </div>
                 <div class="field">
                   <p class="control">
