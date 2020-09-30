@@ -83,7 +83,8 @@
                   <input #balanceInput=ngModel class="input" type="number" 
                     name="balance" placeholder="e.g. 5000"
                     [(ngModel)]="client.balance" required pattern="[0-9]+"
-                    [class.is-danger]="balanceInput.errors && balanceInput.touched">
+                    [class.is-danger]="balanceInput.errors && balanceInput.touched"
+                    [disabled]="isEditBalanceDisabled">
                 </div>
                 <span class="help is-danger" *ngIf="balanceInput.errors?.required && balanceInput.touched">
                   Balance field is required

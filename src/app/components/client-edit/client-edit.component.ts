@@ -4,6 +4,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 
 import { Client } from 'src/app/models/client';
 import { ClientService } from 'src/app/services/client.service';
+import { SettingService } from 'src/app/services/setting.service';
 
 
 @Component({
@@ -15,9 +16,11 @@ export class ClientEditComponent implements OnInit {
 
   client: Client;
   id: string;
+  isEditBalanceDisabled: boolean;
 
   constructor(
     private clientService: ClientService,
+    private settingService: SettingService,
     private route: ActivatedRoute,
     private router: Router,
     private flashMessage: FlashMessagesService){ }
@@ -35,6 +38,9 @@ export class ClientEditComponent implements OnInit {
       this.client = data;
       console.log(this.client);
     });
+    this.settingService.getSettings().subscribe(settings => {
+      this.isEditBalanceDisabled = settings.isDisableBalanceOnEdit;
+    })
   }
 
   onSubmit({valid, value}:{valid: boolean, value: Client}): void {
