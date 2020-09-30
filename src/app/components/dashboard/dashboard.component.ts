@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  totalBalanceOwed: number;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onTotalBalance(totalBalanceOwed: number){
+    this.totalBalanceOwed = totalBalanceOwed;
   }
 
 }

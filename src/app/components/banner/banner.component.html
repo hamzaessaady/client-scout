@@ -18,14 +18,14 @@
           <div class="block">
             <div class="control">
               <div class="tags has-addons has-text-weight-semibold">
-                <span class="tag is-dark">Total owed</span>
-                <span class="tag is-success">590866 USD</span>
+                <span class="tag is-dark is-medium">Total owed</span>
+                <span class="tag is-success is-medium">{{totalBalanceOwed | currency:'':'USD '}}</span>
               </div>
             </div>
           </div>
         </div>
         <div class="column has-text-right">
-          <button class="button is-primary is-small" routerLink="/client/add">
+          <button class="button is-primary is-normal" routerLink="/client/add">
             <span class="icon"> <i class="fas fa-plus"></i> </span>
             <span> <strong>Add Client</strong> </span>
           </button>

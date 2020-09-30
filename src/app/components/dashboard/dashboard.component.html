@@ -1,8 +1,8 @@
 <article class="hero has-background-light is-fullheight-with-navbar">
   <section>
-    <app-banner></app-banner>
+    <app-banner [totalBalanceOwed]="totalBalanceOwed"></app-banner>
   </section>
   <section>
-    <app-clients></app-clients>
+    <app-clients (totalBalanceEvent)="onTotalBalance($event)"></app-clients>
   </section>
 </article>
