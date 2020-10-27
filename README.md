@@ -1,5 +1,7 @@
 # [Client Scout][homepageURL]
-![Angular CLI version][angularBadge] <br/>
+[![NPM][homepageBadge]][homepageURL] 
+![Angular CLI version][angularBadge] 
+![NPM][npmBadge]  <br/>
 By [Hamza Es-saady][linkedinURL]
 
 <!-- Logo -->
@@ -78,7 +80,7 @@ Made with :heart: and Passion.
 
 
 <!-- IDENTIFIERS ------------------------------------------------------------->
-[homepageURL]: https://kuohamkun.github.io/devmate/
+[homepageURL]: https://client-scout.web.app/
 [linkedinURL]: https://www.linkedin.com/in/essaadyhamza/
 [angularURL]: https://angular.io 
 [nodeURL]: https://nodejs.org
@@ -89,4 +91,6 @@ Made with :heart: and Passion.
 [fontAwesomeURL]: http://fontawesome.com
 [firestoreURL]: https://firebase.google.com/docs/firestore
 [firebaseURL]: https://firebase.google.com/
-[angularBadge]: https://img.shields.io/badge/Angular_CLI-10.0.4-DD0031?style=flat&logo=angular
+[angularBadge]: https://img.shields.io/badge/Angular_CLI-10.0.4-DD0031?style=flat-square&logo=angular
+[homepageBadge]: https://img.shields.io/badge/VISIT_HOME_PAGE-fb8500?style=flat-square
+[npmBadge]: https://img.shields.io/npm/v/npm?color=CB3837&logo=NPM&style=flat-square
