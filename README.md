@@ -65,7 +65,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## :sparkling_heart: Support me
 
 I just start to open-source almost everything I can, and I try to reply to everyone needing help using these projects.
-However, If you are using this project and happy with it and just want to **encourage** me to continue creating stuff.
+However, If you are using this project and happy with it and just want to **encourage** me to continue creating stuff, there are few ways you can do it :
 
 - **Giving proper credit when you use it, linking back to it :D**
 - **Starring and sharing the project :rocket:**
