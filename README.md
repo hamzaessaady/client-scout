@@ -5,6 +5,7 @@
 By [Hamza Es-saady][linkedinURL]
 
 <!-- Logo -->
+<br/>
 <div align="center">
 <img src="./src/assets/images/logo.png" alt="Client Scout Logo" width="400px">
 </div> <br/> <br/>
