@@ -4,7 +4,7 @@ import { Observable, ReplaySubject } from 'rxjs';
 import { Setting } from "../models/setting";
 
 const DEFAULT_SETTINGS: Setting = {
-  isRegistrationAllowed: false,
+  isRegistrationAllowed: true,
   isDisableBalanceOnEdit: false,
   isDisableBalanceOnAdd: false
 }
